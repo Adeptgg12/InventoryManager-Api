@@ -12,3 +12,4 @@ C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\
 C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.pdb
 C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.genruntimeconfig.cache
 C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\ref\InventoryManager.Infrastructure.dll
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.sourcelink.json
