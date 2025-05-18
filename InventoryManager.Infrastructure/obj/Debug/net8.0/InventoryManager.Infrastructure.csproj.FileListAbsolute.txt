@@ -1,0 +1,14 @@
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\bin\Debug\net8.0\InventoryManager.Infrastructure.deps.json
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\bin\Debug\net8.0\InventoryManager.Infrastructure.runtimeconfig.json
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\bin\Debug\net8.0\InventoryManager.Infrastructure.dll
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\bin\Debug\net8.0\InventoryManager.Infrastructure.pdb
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.AssemblyInfo.cs
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.dll
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\refint\InventoryManager.Infrastructure.dll
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.pdb
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\InventoryManager.Infrastructure.genruntimeconfig.cache
+C:\Users\oven\source\repos\InventoryManager\InventoryManager.Infrastructure\obj\Debug\net8.0\ref\InventoryManager.Infrastructure.dll
