@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oven\\source\\repos\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj": {}
+    "C:\\Users\\oven\\RiderProjects\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oven\\source\\repos\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj": {
+    "C:\\Users\\oven\\RiderProjects\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oven\\source\\repos\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\oven\\RiderProjects\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj",
         "projectName": "InventoryManager.Infrastructure",
-        "projectPath": "C:\\Users\\oven\\source\\repos\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\oven\\RiderProjects\\InventoryManager\\InventoryManager.Infrastructure\\InventoryManager.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\oven\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oven\\source\\repos\\InventoryManager\\InventoryManager.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\oven\\RiderProjects\\InventoryManager\\InventoryManager.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

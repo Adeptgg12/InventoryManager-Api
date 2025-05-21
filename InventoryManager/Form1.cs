@@ -54,24 +54,23 @@ namespace InventoryManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var productRepository = Connection();
-            addItem1.SetProductRepository(productRepository);
-            outItems1.SetProductRepository(productRepository);
-            sum1.SetProductRepository(productRepository);
+            addItem1.SetProductRepository();
+            outItems1.SetProductRepository();
+            sum1.SetProductRepository();
         }
 
-        public ProductRepository Connection()
-        {
-            var connectionString = "Server=DESKTOP-DHD9UCL\\SQLEXPRESS;Database=InventoryDb;Trusted_Connection=True;TrustServerCertificate=True;";
-
-            var options = new DbContextOptionsBuilder<InventoryManagerDbContext>()
-                .UseSqlServer(connectionString, opts => opts.CommandTimeout(600))
-                .Options;
-
-            var dbContext = new InventoryManagerDbContext(options);
-            var productRepo = new ProductRepository(dbContext);
-            return productRepo;
-        }
+        // public ProductRepository Connection()
+        // {
+        //     var connectionString = "Server=DESKTOP-DHD9UCL\\SQLEXPRESS;Database=InventoryDb;Trusted_Connection=True;TrustServerCertificate=True;";
+        //
+        //     var options = new DbContextOptionsBuilder<InventoryManagerDbContext>()
+        //         .UseSqlServer(connectionString, opts => opts.CommandTimeout(600))
+        //         .Options;
+        //
+        //     var dbContext = new InventoryManagerDbContext(options);
+        //     var productRepo = new ProductRepository(dbContext);
+        //     return productRepo;
+        // }
 
         private void addItem1_Load(object sender, EventArgs e)
         {

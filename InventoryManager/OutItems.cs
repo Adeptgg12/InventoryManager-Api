@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,38 +16,49 @@ namespace InventoryManager
 {
     public partial class OutItems : UserControl
     {
-        private IProductRepository _productRepository;
         public OutItems()
         {
             InitializeComponent();
         }
-        public void SetProductRepository(IProductRepository productRepository)
+        public async void SetProductRepository()
         {
-            _productRepository = productRepository;
-            RefreshData();
+            await RefreshData();
             ProductName_input_out.Enabled = false;
         }
-        public void LoadProductData()
+        public async Task LoadProductData()
         {
-            var products = _productRepository.GetAllProducts()
-             .Select(p => new
-             {
-                 p.ProductId,
-                 p.ProductName,
-                 p.Unit,
-                 p.CreatedAt
-             })
-             .ToList();
+            var products = await GetAllProducts();
 
             dataGridViewOut.DataSource = products;
             dataGridViewOut.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-        public void LoadProductComboBox()
+        public async Task<List<ProductModelOutput>> GetAllProducts()
         {
-            var products = _productRepository.GetAllProducts();
+            try
+            {
+                var httpClient = new HttpClient();
+                var response = await httpClient.GetAsync("http://localhost:5096/Api/Products/GetAllProducts");
+                var json = await response.Content.ReadAsStringAsync();
+                var products = JsonSerializer.Deserialize<List<ProductModelOutput>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+                return products;
+            }
+            catch (Exception a)
+            {
+                Console.WriteLine(a);
+                throw;
+            }
+           
+            
+        }
+        public async Task LoadProductComboBox()
+        {
+            var products = await GetAllProducts();
             // เพิ่มรายการเปล่าไว้ลำดับแรก
-            products.Insert(0, new ProductModel
+            products.Insert(0, new ProductModelOutput
             {
                 ProductId = 0,
                 ProductName = "---"
@@ -61,7 +73,7 @@ namespace InventoryManager
 
         private void comboBoxListItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedProduct = comboBoxListItemOut.SelectedItem as ProductModel;
+            var selectedProduct = comboBoxListItemOut.SelectedItem as ProductModelOutput;
 
             if (selectedProduct != null && selectedProduct.ProductId != 0)
             {
@@ -96,31 +108,38 @@ namespace InventoryManager
                 ProductName = ProductName_input_out.Text,
                 Unit = int.Parse(Unit_input_out.Text)
             };
-            var result = _productRepository.OutProduct(UpdateP);
-            if (result == 1)
+            OutProductApi(UpdateP);
+        }
+        public async Task OutProductApi(ProductModelInput UpdateP)
+        {
+            var httpClient = new HttpClient();
+            var json = JsonSerializer.Serialize(UpdateP);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync("http://localhost:5096/Api/Products/OutProduct", content);
+
+            if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Product Outed successfully");
-                LoadProductData();
-                LoadProductComboBox();
+                var responseContent = await response.Content.ReadAsStringAsync();
+                MessageBox.Show(responseContent);
+                await RefreshData();
+                
             }
-            else if (result == 2)
+            else
             {
-                MessageBox.Show("ไม่สามารถลบสินค้าได้เนื่องจากจำนวนสินค้าในคลังไม่เพียงพอ");
-            }
-            else if (result == 3)
-            {
-                MessageBox.Show("ไม่พบสินค้าที่ต้องการลบ");
+                MessageBox.Show("เกิดข้อผิดพลาด");
+                await RefreshData();
             }
         }
 
-        private void ref_btn_Click(object sender, EventArgs e)
+        private async void ref_btn_Click(object sender, EventArgs e)
         {
-            RefreshData();
+            await RefreshData();
         }
-        public void RefreshData()
+        public async Task RefreshData()
         {
-            LoadProductComboBox();
-            LoadProductData();
+            await LoadProductComboBox();
+            await LoadProductData();
         }
     }
 }
